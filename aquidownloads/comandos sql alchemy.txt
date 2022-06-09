@@ -1,0 +1,21 @@
+SQL Alchemy
+
+1 - importar o banco de dados -> from main import database
+
+2- importar a tabela do arquivo -> from models import Cadastrar
+
+3- criar o banco de dados -> database.create_all()
+
+4- adicionar informações em uma variavel temporaria -> cadastrar = Cadastrar(nome='maquina do tempo',sinopse='3000 mil anos no futuro o que aconteceu ?',link='www.download.com') 
+
+5- confirmar a adição das informações temporarias no banco de dados -> database.session.add(cadastrar)
+
+6- confirma as informações no banco de dados -> database.session.commit()
+
+7- fazer a busca pelo banco de dados -> Cadastrar.query.all()
+
+8- atribui o primeiro usuario a uma variavel -> usuario_teste = Cadastrar.query.first()
+
+9- fazer uma busca dentro do banco pelo informação especifica -> Cadastrar.query.filter_by(nome,id ou email)
+
+

@@ -1,0 +1,36 @@
+{%extends 'home.html'%}
+
+{%block body%}
+<div class="container">
+    <div class="row">  
+        <form method="POST" action="" class="border p-5">
+        <!-- FORM_CADASTRAR.CSRF_TOKEN É UM CODIGO DE SEGURANÇA PARA O FORMULARIO AS CONFIGURAÇÕES DO TOKEN ESTÃO NO MAIN.PY-->
+            {{form_cadastrar.csrf_token}}
+            <legend>Cadastrar Filmes!</legend>
+                <fieldset>
+                    <div class="form-group">
+                        <!-- FORM_CADASTRAR É CRIADO DENTRO DA FUNÇÃO CADASTRAR NO MAIN.PY 
+                        E RETORNADO COM UMA VARIÁVEL E ACESSADO PELO HTML-->
+                        {{ form_cadastrar.nome.label (class= 'form-control-label') }}  
+                        {{ form_cadastrar.nome (class= 'form-control') }}
+                        <!--CADA INFORMAÇÃO DO FORMULARIO PRECISA SER ACESSADO INDIVIDUALMENTE PELA VARIAVEL DO FORMULÁRIO E PASSADO AO HTML DENTRO DE UMA DIV -->
+                    </div>
+                    <div class="form-group">
+                         {{ form_cadastrar.sinopse.label (class= 'form-control-label')}}  
+                         {{ form_cadastrar.sinopse (class= 'form-control')}}
+                    </div>
+                    <div class="form-group">
+                        {{ form_cadastrar.link.label (class= 'form-control-label')}}  
+                        {{ form_cadastrar.link (class= 'form-control')}}
+                   </div>
+                    
+                        {{ form_cadastrar.botao_cadastrar (class="btn btn-success mt-3" ) }}
+                   
+         
+            </fieldset>
+        </form>      
+        
+    </div>
+</div>
+
+{% endblock %}
